@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="Arial, Helvetica, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#232f3e"/></marker>
+  </defs>
+  <rect width="1000" height="600" fill="#ffffff"/>
+  <text x="500" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#232f3e">Camera Loan API - Track A (EC2 + RDS MySQL)</text>
+
+  <!-- Client -->
+  <rect x="30" y="250" width="140" height="80" rx="8" fill="#f2f3f3" stroke="#232f3e" stroke-width="2"/>
+  <text x="100" y="285" text-anchor="middle" font-size="15" font-weight="bold">Client</text>
+  <text x="100" y="305" text-anchor="middle" font-size="12">Browser / curl / Postman</text>
+
+  <!-- AWS cloud -->
+  <rect x="220" y="55" width="750" height="450" rx="10" fill="none" stroke="#232f3e" stroke-width="2"/>
+  <text x="235" y="76" font-size="13" font-weight="bold" fill="#232f3e">AWS Cloud - Region us-east-1 (N. Virginia)</text>
+
+  <!-- VPC -->
+  <rect x="240" y="90" width="710" height="400" rx="8" fill="#f6fbf6" stroke="#2e7d32" stroke-width="2" stroke-dasharray="6 3"/>
+  <text x="255" y="110" font-size="13" font-weight="bold" fill="#2e7d32">VPC 10.0.0.0/16</text>
+
+  <!-- IGW -->
+  <rect x="255" y="255" width="110" height="70" rx="8" fill="#e8f0fe" stroke="#1a5fb4" stroke-width="2"/>
+  <text x="310" y="285" text-anchor="middle" font-size="14" font-weight="bold">Internet</text>
+  <text x="310" y="303" text-anchor="middle" font-size="14" font-weight="bold">Gateway</text>
+
+  <!-- Public subnet -->
+  <rect x="400" y="130" width="250" height="345" rx="8" fill="#eef6ff" stroke="#1a5fb4" stroke-width="2"/>
+  <text x="415" y="150" font-size="13" font-weight="bold" fill="#1a5fb4">Public Subnet (us-east-1a)</text>
+  <rect x="425" y="175" width="200" height="240" rx="8" fill="#ffffff" stroke="#e65100" stroke-width="2"/>
+  <text x="525" y="200" text-anchor="middle" font-size="15" font-weight="bold" fill="#e65100">EC2 (t3.micro)</text>
+  <text x="525" y="222" text-anchor="middle" font-size="12">Amazon Linux 2023</text>
+  <text x="525" y="242" text-anchor="middle" font-size="12">Node.js + Express</text>
+  <text x="525" y="262" text-anchor="middle" font-size="12">Port 3000 (app)</text>
+  <text x="525" y="282" text-anchor="middle" font-size="12">Endpoints /loans (CRUD)</text>
+  <text x="525" y="302" text-anchor="middle" font-size="12">GET /health</text>
+  <rect x="440" y="330" width="170" height="70" rx="6" fill="#fff3e0" stroke="#e65100"/>
+  <text x="525" y="350" text-anchor="middle" font-size="12" font-weight="bold">SG: loan-app-sg</text>
+  <text x="525" y="368" text-anchor="middle" font-size="11">In: 22 (IP saya), 3000</text>
+  <text x="525" y="384" text-anchor="middle" font-size="11">Out: 3306 ke loan-db-sg</text>
+  <text x="525" y="432" text-anchor="middle" font-size="12" fill="#555">IAM: tanpa IAM role di EC2</text>
+  <text x="525" y="449" text-anchor="middle" font-size="12" fill="#555">(API tidak memanggil layanan AWS lain)</text>
+
+  <!-- Private subnets -->
+  <rect x="690" y="130" width="240" height="345" rx="8" fill="#fdf2f8" stroke="#8e24aa" stroke-width="2"/>
+  <text x="705" y="150" font-size="13" font-weight="bold" fill="#8e24aa">Private Subnets (us-east-1a &amp; 1b)</text>
+  <text x="705" y="167" font-size="11" fill="#8e24aa">DB subnet group: loan-db-subnet</text>
+  <rect x="710" y="195" width="200" height="220" rx="8" fill="#ffffff" stroke="#8e24aa" stroke-width="2"/>
+  <text x="810" y="222" text-anchor="middle" font-size="15" font-weight="bold" fill="#8e24aa">RDS MySQL 8.0</text>
+  <text x="810" y="244" text-anchor="middle" font-size="12">db.t3.micro</text>
+  <text x="810" y="264" text-anchor="middle" font-size="12">DB: loan_db</text>
+  <text x="810" y="284" text-anchor="middle" font-size="12">Table: loans</text>
+  <text x="810" y="304" text-anchor="middle" font-size="12">Publicly accessible: No</text>
+  <rect x="725" y="330" width="170" height="70" rx="6" fill="#f3e5f5" stroke="#8e24aa"/>
+  <text x="810" y="350" text-anchor="middle" font-size="12" font-weight="bold">SG: loan-db-sg</text>
+  <text x="810" y="368" text-anchor="middle" font-size="11">In: 3306 hanya dari loan-app-sg</text>
+  <text x="810" y="384" text-anchor="middle" font-size="11">Tanpa akses internet</text>
+
+  <!-- Arrows -->
+  <line x1="170" y1="290" x2="253" y2="290" stroke="#232f3e" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="205" y="312" text-anchor="middle" font-size="11">HTTP</text>
+  <line x1="365" y1="290" x2="423" y2="290" stroke="#232f3e" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="625" y1="290" x2="708" y2="290" stroke="#8e24aa" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="667" y="312" text-anchor="middle" font-size="11" fill="#8e24aa">3306</text>
+
+  <!-- Legend / data flow -->
+  <text x="30" y="530" font-size="12" font-weight="bold">Data flow:</text>
+  <text x="30" y="549" font-size="11">1) Client kirim request ke IP publik EC2:3000  2) IGW meneruskan ke public subnet</text>
+  <text x="30" y="565" font-size="11">3) Express memvalidasi dan query via mysql2  4) RDS (private) menjawab, respons JSON kembali ke client</text>
+  <text x="30" y="582" font-size="11" fill="#555">Admin: SSH (22) ke EC2 hanya dari IP saya. DB tidak bisa diakses dari internet.</text>
+</svg>
