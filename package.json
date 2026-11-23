@@ -1,0 +1,17 @@
+{
+  "name": "camera-loan-api",
+  "version": "0.1.0",
+  "description": "REST API peminjaman alat (CRUD) untuk Lab Project AWS Cloud Computing - Track A (EC2 + RDS MySQL)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check-db": "node scripts/check-db.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
+  }
+}
