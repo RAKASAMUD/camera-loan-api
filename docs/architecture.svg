@@ -45,7 +45,7 @@
   <text x="705" y="150" font-size="13" font-weight="bold" fill="#8e24aa">Private Subnets (us-east-1a &amp; 1b)</text>
   <text x="705" y="167" font-size="11" fill="#8e24aa">DB subnet group: loan-db-subnet</text>
   <rect x="710" y="195" width="200" height="220" rx="8" fill="#ffffff" stroke="#8e24aa" stroke-width="2"/>
-  <text x="810" y="222" text-anchor="middle" font-size="15" font-weight="bold" fill="#8e24aa">RDS MySQL 8.0</text>
+  <text x="810" y="222" text-anchor="middle" font-size="15" font-weight="bold" fill="#8e24aa">RDS MySQL 8.4</text>
   <text x="810" y="244" text-anchor="middle" font-size="12">db.t3.micro</text>
   <text x="810" y="264" text-anchor="middle" font-size="12">DB: loan_db</text>
   <text x="810" y="284" text-anchor="middle" font-size="12">Table: loans</text>

@@ -12,7 +12,7 @@ VPC -> Create VPC -> "VPC and more": name `loan`, `10.0.0.0/16`, 2 AZ, public su
 
 ## 3. RDS MySQL
 - DB subnet group `loan-db-subnet`: dua subnet private (us-east-1a dan 1b).
-- MySQL 8.0, Single-AZ, id `loan-db`, user `admin`, `db.t3.micro`, 20 GB, VPC `loan-vpc`, **Public access: No**, SG `loan-db-sg`, initial database `loan_db`.
+- MySQL 8.4, Single-AZ, id `loan-db`, user `admin`, `db.t3.micro`, 20 GB, VPC `loan-vpc`, **Public access: No**, SG `loan-db-sg`, initial database `loan_db`.
 
 ## 4. EC2
 - `loan-app`, Amazon Linux 2023, `t3.micro`, key pair `loan-key` (.pem), VPC `loan-vpc`, public subnet us-east-1a, auto-assign public IP, SG `loan-app-sg`, tanpa IAM role.

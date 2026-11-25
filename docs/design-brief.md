@@ -15,7 +15,7 @@ Lihat `docs/architecture.png`. Ringkasnya:
 
 - **VPC `loan-vpc` (10.0.0.0/16)** dengan public subnet di us-east-1a (EC2) dan 2 private subnet di us-east-1a dan us-east-1b (RDS, syarat DB subnet group `loan-db-subnet`).
 - **EC2 t3.micro** (Amazon Linux 2023) menjalankan Node.js + Express di port 3000.
-- **RDS MySQL 8.0 (db.t3.micro)**, *publicly accessible = No*.
+- **RDS MySQL 8.4 (db.t3.micro)**, *publicly accessible = No*.
 - **Internet Gateway** hanya untuk public subnet.
 
 **Alur data:** Client -> IP publik EC2:3000 -> Express memvalidasi input -> query MySQL via mysql2 ke RDS (port 3306, jalur privat) -> respons JSON ke client.
